@@ -1,0 +1,400 @@
+/* ============================================================
+   MAGNOLIA COMMERCE GROUP — style.css
+   ============================================================ */
+
+/* --- Variables --- */
+:root {
+  --primary: #2C3A4F;
+  --gold: #C9A84C;
+  --black: #0D0D0D;
+  --bg: #F8F7F5;
+  --muted: #6B7A8D;
+  --border: rgba(12, 12, 12, 0.1);
+  --container: 1100px;
+  --nav-h: 72px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* --- Container --- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--black);
+  height: var(--nav-h);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  transition: color 0.2s;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid transparent;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-links a.active {
+  border-bottom-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--primary);
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem 2rem 5rem;
+  min-height: calc(100vh - var(--nav-h));
+}
+
+.hero-logo {
+  height: 110px;
+  width: auto;
+  margin: 0 auto 2.5rem;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.hero .subheading {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2.75rem;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2.25rem;
+  border: 1.5px solid var(--primary);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section {
+  padding: 5rem 2rem;
+}
+
+.section.alt { background: #fff; }
+
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.section-rule {
+  width: 36px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.section-rule.centered { margin-left: auto; margin-right: auto; }
+
+.section h2 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #4a5568;
+  max-width: 680px;
+  line-height: 1.85;
+}
+
+/* Intro (home) */
+.intro {
+  border-top: 1px solid var(--border);
+}
+
+.intro-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+/* ============================================================
+   PAGE NAV PROMPT
+   ============================================================ */
+.page-nav {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.page-nav a {
+  display: inline-block;
+  margin: 0 1.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.page-nav a:hover { color: var(--gold); }
+
+/* ============================================================
+   BRAND CARDS
+   ============================================================ */
+.brands-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand-card {
+  border: 1px solid var(--border);
+  padding: 2.5rem 2.25rem;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-card h3 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.brand-card .brand-rule {
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold);
+  margin: 0.9rem 0 1.1rem;
+}
+
+.brand-card p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.85;
+  flex: 1;
+  max-width: none;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+
+.card-link:hover { color: var(--gold); }
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-section {
+  min-height: calc(100vh - var(--nav-h) - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.contact-section h1 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section .section-rule { margin-top: 1rem; }
+
+.contact-section .subtext {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 460px;
+  margin: 1.5rem auto 2.25rem;
+  line-height: 1.75;
+}
+
+.contact-email {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(1.2rem, 3vw, 1.85rem);
+  color: var(--primary);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 4px;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.contact-email:hover { color: var(--gold); }
+
+.contact-note {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+footer a:hover { color: var(--gold); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    border-bottom: 1px solid var(--black);
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 0.8rem; }
+
+  .hero { padding: 4rem 1.5rem 3rem; min-height: auto; }
+  .hero-logo { height: 80px; }
+
+  .brands-grid { grid-template-columns: 1fr; margin-top: 2rem; }
+
+  .section { padding: 3.5rem 1.5rem; }
+  .contact-section { padding: 4rem 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .page-nav a { display: block; margin: 0.5rem 0; }
+}

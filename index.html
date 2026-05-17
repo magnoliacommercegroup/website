@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Magnolia Commerce Group LLC is a multi-brand e-commerce holding company operating across multiple product categories.">
+  <title>Magnolia Commerce Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Magnolia Commerce Group">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <img src="assets/logo.png" alt="Magnolia Commerce Group" class="hero-logo">
+      <h1>Magnolia Commerce Group</h1>
+      <p class="subheading">A holding company for e-commerce brands.</p>
+      <a href="about.html" class="btn">Learn More &rarr;</a>
+    </section>
+
+    <section class="section intro">
+      <div class="container intro-inner">
+        <p class="section-label">Who We Are</p>
+        <div class="section-rule"></div>
+        <p>Magnolia Commerce Group LLC is a multi-brand e-commerce holding company operating across multiple product categories. We source, sell, and scale niche retail brands through established online marketplaces.</p>
+      </div>
+    </section>
+
+    <nav class="page-nav" aria-label="Page navigation">
+      <a href="about.html">About Us &rarr;</a>
+      <a href="contact.html">Contact &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Magnolia Commerce Group LLC. All rights reserved. &nbsp;&middot;&nbsp; <a href="mailto:inquiries@magnoliacommercegroup.com">inquiries@magnoliacommercegroup.com</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+
+</body>
+</html>
